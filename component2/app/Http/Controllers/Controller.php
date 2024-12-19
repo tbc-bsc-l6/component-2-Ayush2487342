@@ -15,10 +15,15 @@ class Controller extends Controller
     {
         return view('posts.create');
     }
-    public function
+    public function store(Request $request)
     {
-        $
+        $validated = $request->validate([
+            'name'=>'required| string| max255',
+            'price' => 'required| numeric'
+            'description' =>'nullable| string',
+        ]);
     }
+
 }
 
 
