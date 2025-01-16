@@ -20,8 +20,8 @@ class Controller extends Controller
         $validated = $request->validate([
             'name'=>'required| string| max255',
             'price' => 'required| numeric'
-            'description' =>'nullable| string',
-        ]);
+            'description' =>'nullable| string',;
+        
     }
 
 }

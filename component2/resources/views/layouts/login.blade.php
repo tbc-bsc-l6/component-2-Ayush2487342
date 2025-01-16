@@ -37,7 +37,24 @@
                             required>
                     </div>
 
-                    
+                    <!-- Remember Me -->
+                    <div class="form-check mb-3">
+                        <input 
+                            type="checkbox" 
+                            class="form-check-input" 
+                            id="remember" 
+                            name="remember">
+                        <label for="remember" class="form-check-label">Remember Me</label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                </form>
+
+                <!-- Additional Links -->
+                <div class="text-center mt-3">
+                    <a href="/register" class="text-decoration-none">Don't have an account? Register</a>
+                </div>
                 <div class="text-center mt-2">
                     <a href="/forgot-password" class="text-decoration-none">Forgot Password?</a>
                 </div>
