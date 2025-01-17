@@ -5,6 +5,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\PasswordController;
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -47,6 +50,13 @@ Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.s
 Route::get('/login', function () {
     return view('auth.login');
 })->name('login');
+
+
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
+Route::get('/dashboard', function () {
+    return "Welcome to the dashboard!";
+})->name('dashboard');
 
 Route::get('home', function () {
     return view('home');
