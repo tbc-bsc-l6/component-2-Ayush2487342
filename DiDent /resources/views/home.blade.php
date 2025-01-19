@@ -172,12 +172,7 @@
                             
                         </div>
                         <!-- LOGO end -->
-    
-                        <!-- Headr Button start -->
-                        <div class="header_btn">
-                            <div class="popup"><a href="#step1" data-effect="mfp-zoom-in" class="step1 btn_white">Make an Appointment</a></div>
-                        </div>
-                        <!-- Headr Button end -->
+
     
                         <!-- NAVIGATION start -->
                         <div class="menu">
@@ -189,25 +184,10 @@
                                     <li>
                                         <a href="{{ route('about.page') }}" data-nav="about">About Us</a>
                                     </li>
-                                    <li>
-                                        <a href="{{ route('service.page') }}" data-nav="services">Services</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('testimonial.page') }}" data-nav="testimonials">Testimonials</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('gallery.page') }}" data-nav="gallery">Gallery</a>
-                                    </li>
+                                    
                                     <li>
                                         <a href="{{ route('blog.page') }}" data-nav="blog">Blog</a>
-                                        {{-- 
-                                        <ul>
-                                            <li><a href="blog_full_width.php">Blog Full Width</a></li>
-                                            <li><a href="blog_grid.php">Blog Grid</a></li>
-                                            <li><a href="blog_list.php">Blog List</a></li>
-                                            <li><a href="blog_post.php">Blog Post</a></li>
-                                        </ul> 
-                                        --}}
+                                       
                                     </li>
                                     <li>
                                         <a href="{{ route('contact.page') }}" data-nav="contact">Contact Us</a>
@@ -257,30 +237,9 @@
     
                                             <li>
                                                 <a href="{{route('about.page')}}">About Us</a>
-                                                {{-- <ul class="dl-submenu">
-                                                    <li><a href="aboutus.php">About Us Page</a> </li>
-                                                    <li><a href="ourdentists.php">Our Dentists</a></li>
-                                                    <li><a href="ourstaff.php">Our Staff</a></li>
-                                                </ul> --}}
+                                               
                                             </li>
-                                            <li>
-                                                <a href="service.php">Services</a>
-                                                <ul class="dl-submenu">
-                                                    <li><a href="service.php">Service Page</a></li>
-                                                    <li><a href="service_page.php">Service Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="testimonials.php">Testimonials</a></li>
-                                            <li>
-                                                <a href="blog.php">Blog</a>
-                                                <ul class="dl-submenu">
-                                                    <li><a href="blog.php">Blog Default</a></li>
-                                                    <li><a href="blog_full_width.php">Blog Full Width</a></li>
-                                                    <li><a href="blog_grid.php">Blog Grid</a></li>
-                                                    <li><a href="blog_list.php">Blog List</a></li>
-                                                    <li><a href="blog_post.php">Blog Post</a></li>
-                                                </ul>
-                                            </li>
+                                           
                                             <li><a href="{{route('contact.page')}}">Contact Us</a></li>
                                            
                                         </ul>
@@ -363,93 +322,7 @@
         </div>
         <div class="footer_row background_blue row">
     	    <div class="container">
-                <!-- Start top_footer -->
-                <div class="top_footer">
-                    <!-- Start footer_logo -->
-               
-                        <a href="{{route('home.page')}}" class="footer_logo">
-                            <img src="{{asset($logo->logo)}}" style="width: 120px;color:#FFF" />
-                        </a>
-                    
-                    <!-- End footer_logo -->
-                    <!-- Start footer_social_button -->
-                    <div class="footer_social_button">
-                        <a target="_blank" href="{{$socialMedia->fb}}"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a target="_blank" href="{{$socialMedia->tw}}"><i class="fa-brands fa-twitter"></i></a>
-                        <a target="_blank" href="{{$socialMedia->google}}"><i class="fa-brands fa-google-plus-g"></i></a>
-                        <a target="_blank" href="{{$socialMedia->youtube}}"><i class="fa-brands fa-youtube"></i></a>
-                
-                    </div>
-                    <!-- End footer_social_button -->
-                </div>
-                <!-- End top_footer -->
-    
-                <!-- Start middle_footer -->
-                <div class="middle_footer">
-                    <!-- Start contact_info -->
-                    <div class="contact_info">
-                        <div class="work_time">
-                            <i class="fa fa-clock-o"></i>
-                            <div class="work_time_inner">
-                                <span>{{$openTime->day1}}</span>
-                                <span>{{$openTime->day2}}</span>
-                            </div>
-                        </div>
-                        <a href="tel:16501234000"><i class="fa fa-phone"></i>{{$hospitalInfo->phone}}
-                        </a>
-                        <a href="mailto:info@irishwebdesign.com">
-                            <i class="fa fa-envelope"></i>{{$hospitalInfo->email}}
-                        </a>
-                        <div class="footer_address">
-                            <i class="fa fa-map-marker"></i> {{$hospitalInfo->location}}
-                        </div>
-                    </div>
-                    <!-- End contact_info -->
-                    <!-- Start footer_menu -->
-                    <div class="footer_menu">
-                        <a class="footer_see" href="#" onclick="return false"><i class="fa fa-bars"></i> <span>Navigation</span> </a>
-                        
-                        <div class="row footer_nav">
-                            <a class="footer_menu_close" title="Close"><i class="fa fa-times" aria-hidden="true"></i></a>  
-                            <div class="col-4">
-                                <ul>
-                                    <li><a href="{{route('home.page')}}">Home</a></li>
-                                    <li><a href="http://dental.owl-themes.net/">Default color</a></li>
-                                    <li><a href="http://dental.owl-themes.net/green/">Green color</a></li>
-                                    <li><a href="http://dental.owl-themes.net/orange/">Orange color</a></li>
-                                    <li><a href="http://dental.owl-themes.net/pink/">Pink color</a></li>
-                                    <li><a href="http://dental.owl-themes.net/purple/">Purple color</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-4">
-                                <ul>
-                                    <li><a href="/testimonials.php">Testimonials</a></li>
-                                    <li><a href="http://dental.owl-themes.net/documentation/">Element</a></li>
-                                    <li><a href="/contact.php">Contact Us</a></li> 
-                                </ul>
-                            </div>
-                            <div class="col-4">
-                                <ul>
-                                    <li><a href="{{route('about.page')}}">About Us Page</a></li>
-                            		{{-- <li><a href="/ourdentists.php">Our Dentists</a></li>
-                                    <li><a href="/ourstaff.php">Our Staff</a></li>
-                                    <li><a href="/testimonials.php">Testimonials</a></li> --}}
-                                </ul>
-                            </div>
-                            <div class="col-4">
-                                <ul>  
-                                    <li><a href="/blog.php">Blog Default</a></li>
-                                    <li><a href="/blog_full_width.php">Blog Full Width</a></li>
-                                    <li><a href="/blog_grid.php">Blog Grid</a></li>
-                                    <li><a href="/blog_list.php">Blog List</a></li>
-                                    <li><a href="/blog_post.php">Blog Post</a></li> 
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End footer_menu -->
-                </div>
-                <!-- End middle_footer -->
+
     
                 <!-- Start bottom_footer -->
                 <div class="bottom_footer">
@@ -461,7 +334,7 @@
                     <!-- Start copyright -->
                     <div class="copyright">
                     <p><a  style="color:#FF4800;margin-right:5px" target="_blank"
-                    href="#">Design & Developed By: Mega Web Link.</a>© 2024 - All Rights Reserved.</p>
+                    href="#"></a>© 2024 - All Rights Reserved.</p>
                     </div>
                     <!-- End copyright -->
                 </div>

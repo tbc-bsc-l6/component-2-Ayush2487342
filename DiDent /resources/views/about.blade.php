@@ -169,32 +169,6 @@
     </div>
     <!-- Gets end -->
     
-    
-    <!-- Gallery start -->
-    <div class="row gallery gallery_img">
-        <div class="container row">
-            <h4>Gallery</h4>
-            <div class="carousel_counter"></div>
-            <div class="navigation"></div>
-        </div>
-        <div class="owl_gallery owl-carousel owl-theme">
-            @foreach ($gallery as $g)
-                <div class="item">
-                    <div class="overflow_hidden row">
-                        <div class="radius_mini">
-                            <!-- Image -->
-                            <img class="owl-lazy" src="{{ asset($g->image) }}" data-src="{{$g->image}}" alt="DiDent" />
-                            <!-- Image URL -->
-                            
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-        
-    </div>
-    <!-- Gallery end -->
-    
     <!-- Costum text start -->
     <div class="row costum_text">
         <div class="container">
@@ -230,53 +204,5 @@
         </div>
     </div>
     <!-- Costum text end -->
-
-
-    <!-- Start Get Service -->
-    <div class="row get_service">
-        <div class="container">
-            <h4>Get the best service in your city</h4>
-            <p style="color: #FFF;">  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <div class="popup"><a href="#step1" data-effect="mfp-zoom-in" class="step1 btn">Make an Appointment</a></div>
-        </div>
-    </div>
-    <!-- End Get Service -->
-
-     <!-- Start Recent News -->
-     <div class="row news">
-        <div class="container">
-            <h4>Recent News</h4>
-            <div class="row row-15">
-                <!-- Start Recent News Item -->
-                @foreach ($recentNews as $rn)
-                    
-                <div class="col-3 news_item">
-                    <div class="news_item_vn">
-                        <a href="#" class="radius_niz">
-                            <img 
-                                class="lozad" 
-                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
-                                data-src="{{ $rn->image }}" 
-                                data-srcset="{{ $rn->image }}" 
-                                alt="{{ $rn->heading }}" 
-                            />
-                        </a>
-                        <div class="news_item_content">
-                            <a href="/blog_post.php" class="news_item_content_title">{{$rn->heading}}</a>
-                            <div class="news_item_content_date">{{$rn->date}}</div>
-                            <div class="news_item_content_desk">
-                                {{$rn->description}}
-                            </div>
-                            <a href="#" class="more">Learn more</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Recent News Item -->
-                @endforeach
-
-            </div>
-        </div>
-    </div>
-    <!-- End Recent News --> 
 </main>
 @endsection

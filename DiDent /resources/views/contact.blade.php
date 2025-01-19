@@ -29,9 +29,7 @@
         
         <form action="{{ route('contact.store') }}" method="post">
             @csrf
-            <div class="row form_row">
                 <div class="row message_row">
-                    <div class="leable">Message</div>
                     <textarea class="posText" name="posText">{{ old('posText') }}</textarea>
                     @error('posText')
                         <div class="error-message" style="color: red;">{{ $message }}</div>
@@ -59,17 +57,9 @@
                             <div class="error-message" style="color: red;">{{ $message }}</div>
                         @enderror
                     </div>
-                </div>
-            </div>
+                
+                    <button type="submit" class="btn btn-success">submit</button>
         
-            <!-- Leave a Reply -->
-        
-            <!-- Send button -->
-            <div class="contact_process"></div>
-            <div class="center">
-                <button type="submit" class="button contact_send">Send a Message</button>
-            </div>
-            <!-- Send button -->
         </form>
         
         <style>
