@@ -9,23 +9,21 @@ return [
     | Default Database Connection Name
     |--------------------------------------------------------------------------
     |
-    | Here you may specify which of the database connections below you wish
-    | to use as your default connection for database operations. This is
-    | the connection which will be utilized unless another connection
-    | is explicitly specified when you execute a query / statement.
+    | Here you specify the default database connection that Laravel should use.
+    | Unless otherwise specified, this connection is used for all database operations.
     |
     */
 
-    'default' => env('DB_CONNECTION', 'sqlite'),
+    'default' => env('DB_CONNECTION', 'sqlite'), // Set the default database connection
 
     /*
     |--------------------------------------------------------------------------
     | Database Connections
     |--------------------------------------------------------------------------
     |
-    | Below are all of the database connections defined for your application.
-    | An example configuration is provided for each database system which
-    | is supported by Laravel. You're free to add / remove connections.
+    | This section defines the settings for all the database connections available
+    | in the application. You can specify multiple connections for different database
+    | types or multiple databases of the same type.
     |
     */
 
@@ -119,9 +117,9 @@ return [
     | Migration Repository Table
     |--------------------------------------------------------------------------
     |
-    | This table keeps track of all the migrations that have already run for
-    | your application. Using this information, we can determine which of
-    | the migrations on disk haven't actually been run on the database.
+    | This table keeps track of all the migrations that have already been applied
+    | to the database. It helps manage the state of migrations across different
+    | database instances.
     |
     */
 
@@ -135,9 +133,8 @@ return [
     | Redis Databases
     |--------------------------------------------------------------------------
     |
-    | Redis is an open source, fast, and advanced key-value store that also
-    | provides a richer body of commands than a typical key-value system
-    | such as Memcached. You may define your connection settings here.
+    | Settings for Redis database connections, used for caching or queue management
+    | in Laravel. You can configure multiple Redis connections if needed.
     |
     */
 

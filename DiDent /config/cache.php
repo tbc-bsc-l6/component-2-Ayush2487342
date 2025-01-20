@@ -9,25 +9,20 @@ return [
     | Default Cache Store
     |--------------------------------------------------------------------------
     |
-    | This option controls the default cache store that will be used by the
-    | framework. This connection is utilized if another isn't explicitly
-    | specified when running a cache operation inside the application.
+    | Sets the default cache store. If no store is specified during cache operations,
+    | this default store will be used.
     |
     */
 
-    'default' => env('CACHE_STORE', 'database'),
+    'default' => env('CACHE_STORE', 'database'), // Default cache store set via environment variable
 
     /*
     |--------------------------------------------------------------------------
     | Cache Stores
     |--------------------------------------------------------------------------
     |
-    | Here you may define all of the cache "stores" for your application as
-    | well as their drivers. You may even define multiple stores for the
-    | same cache driver to group types of items stored in your caches.
-    |
-    | Supported drivers: "array", "database", "file", "memcached",
-    |                    "redis", "dynamodb", "octane", "null"
+    | Configuration of various cache stores with different drivers. Each store is
+    | set up with specific configurations depending on the cache method used.
     |
     */
 
@@ -35,59 +30,59 @@ return [
 
         'array' => [
             'driver' => 'array',
-            'serialize' => false,
+            'serialize' => false, // Does not serialize data, suitable for non-persistent caches
         ],
 
         'database' => [
-            'driver' => 'database',
-            'connection' => env('DB_CACHE_CONNECTION'),
-            'table' => env('DB_CACHE_TABLE', 'cache'),
-            'lock_connection' => env('DB_CACHE_LOCK_CONNECTION'),
-            'lock_table' => env('DB_CACHE_LOCK_TABLE'),
+            'driver' => 'database', // Uses database for cache storage
+            'connection' => env('DB_CACHE_CONNECTION'), // Database connection to use
+            'table' => env('DB_CACHE_TABLE', 'cache'), // Table to store cache data
+            'lock_connection' => env('DB_CACHE_LOCK_CONNECTION'), // Optional separate connection for cache locks
+            'lock_table' => env('DB_CACHE_LOCK_TABLE'), // Table for cache locks
         ],
 
         'file' => [
-            'driver' => 'file',
-            'path' => storage_path('framework/cache/data'),
-            'lock_path' => storage_path('framework/cache/data'),
+            'driver' => 'file', // Uses file system for cache storage
+            'path' => storage_path('framework/cache/data'), // Path where cache files are stored
+            'lock_path' => storage_path('framework/cache/data'), // Path where cache lock files are stored
         ],
 
         'memcached' => [
-            'driver' => 'memcached',
-            'persistent_id' => env('MEMCACHED_PERSISTENT_ID'),
+            'driver' => 'memcached', // Uses Memcached for cache
+            'persistent_id' => env('MEMCACHED_PERSISTENT_ID'), // Optional persistent ID for long-lived connections
             'sasl' => [
-                env('MEMCACHED_USERNAME'),
-                env('MEMCACHED_PASSWORD'),
+                env('MEMCACHED_USERNAME'), // Username for SASL authentication
+                env('MEMCACHED_PASSWORD'), // Password for SASL authentication
             ],
             'options' => [
-                // Memcached::OPT_CONNECT_TIMEOUT => 2000,
+                // Additional options can be set here for Memcached
             ],
             'servers' => [
                 [
-                    'host' => env('MEMCACHED_HOST', '127.0.0.1'),
-                    'port' => env('MEMCACHED_PORT', 11211),
-                    'weight' => 100,
+                    'host' => env('MEMCACHED_HOST', '127.0.0.1'), // Server host
+                    'port' => env('MEMCACHED_PORT', 11211), // Server port
+                    'weight' => 100, // Weight for server distribution
                 ],
             ],
         ],
 
         'redis' => [
-            'driver' => 'redis',
-            'connection' => env('REDIS_CACHE_CONNECTION', 'cache'),
-            'lock_connection' => env('REDIS_CACHE_LOCK_CONNECTION', 'default'),
+            'driver' => 'redis', // Uses Redis for cache
+            'connection' => env('REDIS_CACHE_CONNECTION', 'cache'), // Redis connection to use
+            'lock_connection' => env('REDIS_CACHE_LOCK_CONNECTION', 'default'), // Connection for cache locks
         ],
 
         'dynamodb' => [
-            'driver' => 'dynamodb',
-            'key' => env('AWS_ACCESS_KEY_ID'),
-            'secret' => env('AWS_SECRET_ACCESS_KEY'),
-            'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
-            'table' => env('DYNAMODB_CACHE_TABLE', 'cache'),
-            'endpoint' => env('DYNAMODB_ENDPOINT'),
+            'driver' => 'dynamodb', // Uses DynamoDB for cache
+            'key' => env('AWS_ACCESS_KEY_ID'), // AWS access key
+            'secret' => env('AWS_SECRET_ACCESS_KEY'), // AWS secret key
+            'region' => env('AWS_DEFAULT_REGION', 'us-east-1'), // AWS region
+            'table' => env('DYNAMODB_CACHE_TABLE', 'cache'), // DynamoDB table for cache
+            'endpoint' => env('DYNAMODB_ENDPOINT'), // Optional custom endpoint for local testing
         ],
 
         'octane' => [
-            'driver' => 'octane',
+            'driver' => 'octane', // Uses Laravel Octane's in-memory cache
         ],
 
     ],
@@ -97,12 +92,10 @@ return [
     | Cache Key Prefix
     |--------------------------------------------------------------------------
     |
-    | When utilizing the APC, database, memcached, Redis, and DynamoDB cache
-    | stores, there might be other applications using the same cache. For
-    | that reason, you may prefix every cache key to avoid collisions.
+    | Prefix for cache keys to prevent collisions with other applications using the same cache storage.
     |
     */
 
-    'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_cache_'),
+    'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_cache_'), // Prefix for cache keys
 
 ];
